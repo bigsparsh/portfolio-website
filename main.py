@@ -1,3 +1,4 @@
+import pandas
 import streamlit as st
 
 st.set_page_config(layout='wide')
@@ -13,4 +14,25 @@ with col2:
             ' I completed my 10th from Symboyzia School Agra which is affiliated by CBSE. Currently I am '
             'pursuing Diploma from GLA University Mathura with CS branch and I am in my 3rd year. ')
 
-st.write('This is some extra content added for implementing an exercise given by the mentor.')
+below_programs = '''
+Below are the programs in python that I made or am about to make.
+'''
+st.write(below_programs)
+
+col3, col4 = st.columns(2)
+
+titles = pandas.read_csv('data.csv', sep=';')
+
+with col3:
+    for index, content in titles[:10].iterrows():
+        st.title(content['title'])
+        st.image(f"images/{content['image']}")
+        st.write(content['description'])
+        st.write(content['url'])
+
+with col4:
+    for index, content in titles[10:].iterrows():
+        st.title(content['title'])
+        st.image(f"images/{content['image']}")
+        st.write(content['description'])
+        st.write(content['url'])
