@@ -8,4 +8,4 @@ with st.form(key='my-form'):
     message = st.text_area('Your message:')
     button = st.form_submit_button('Submit')
     if button:
-        snm.email_sender(message=message, receiver=email)
+        snm.email_sender(message=message, email=email)
