@@ -28,11 +28,11 @@ with col3:
         st.title(content['title'])
         st.image(f"images/{content['image']}")
         st.write(content['description'])
-        st.write(content['url'])
+        st.write(f'[Source Code]({content["url"]})')
 
 with col4:
     for index, content in titles[10:].iterrows():
         st.title(content['title'])
         st.image(f"images/{content['image']}")
         st.write(content['description'])
-        st.write(content['url'])
+        st.write(f'[Source Code]({content["url"]})')
